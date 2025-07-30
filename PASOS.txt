@@ -1,0 +1,17 @@
+# Crear la imagen en Docker
+docker build -t miapp-h2:latest .
+
+# Lanzar contenedor
+docker run --rm -p 8080:8080 miapp-h2:latest
+
+
+# Etiquetar la imagen
+ docker tag miapp-h2:latest hrcs07/miapp-h2:1.0.0
+#docker tag miapp:latest <tu_usuario>/miapp:latest   # opcional
+
+# lOguearse
+docker login
+
+# Subir la version 1
+ docker push <tu_usuario>/miapp:1.0.0
+ #docker push <tu_usuario>/miapp:latest
